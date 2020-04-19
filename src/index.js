@@ -1,3 +1,4 @@
-import { App } from './App.js';
+import App from './App.js';
 
-document.getElementById("root").innerHTML = App().Render;
+console.log(App());
+document.getElementById("root").appendChild(App());
