@@ -5,9 +5,9 @@ import e from '../element.js';
 import header from './header.js';
 import bookinfo from './bookinfo.js';
 
-export default (bookname) => {
+export default (bookID) => {
     return e("div", {id : "book"},
         header(),
-        bookinfo(bookname)
+        bookinfo(booID)
     )
 };

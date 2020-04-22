@@ -1,6 +1,7 @@
 let bookJSON = `
 [
     {
+        "id" : "wjdgkwls",
         "title" : "신화 콘서트",
         "writer" : "김상훈",
         "publisher" : "행복한작업실",
@@ -20,6 +21,7 @@ let bookJSON = `
         ]   
     },
     {
+        "id" : "wjdalstj",
         "title" : "지금 시작하는 생각 인문학",
         "writer" : "이화선",
         "publisher" : "비즈니스북스",
@@ -47,11 +49,11 @@ export function getBookList() {
     return books;
 }
 
-export function getBookInfo(bookname) {
+export function getBookInfo(bookID) {
     let books = JSON.parse(bookJSON);
     
     for(let book of books) {
-        if(book.title === bookname)
+        if(book.id === bookID)
             return book;
     }
     return null;

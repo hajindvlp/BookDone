@@ -9,7 +9,10 @@ const routeDict = [
         children : [
             {
                 url : ":bookname",
-                function : Book
+                function : Book,
+                args : [
+                    "bookname"
+                ]
             }
         ]
     }, 
