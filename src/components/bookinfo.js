@@ -1,10 +1,10 @@
 import e from '../element.js';
 
-import { getBookInfo } from '../api/getbook';
+import { getBookInfo } from '../api/getbook.js';
 
 export default (bookname) => {
+    // console.log(bookname);
     let book = getBookInfo(bookname);
-    console.log(book);
 
     return e("div", {"id" : "book_info"},
         e("img", {id : "book_info_image", src : book.image}),
@@ -16,7 +16,7 @@ export default (bookname) => {
             ...book.content.map(content => {
                 return e("li", {id: "book_info_content"}, 
                     e("p", {id: "book_info_content_title"}, content.title),
-                    e("p", {id: "book_info_content_pagenum"}, content.pagenum)                    
+                    e("p", {id: "book_info_content_pagenum"}, content.pagenum.toString())                    
                 )
             })
         ),

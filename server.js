@@ -4,6 +4,11 @@ const port = 8000;
 const app = express();
 
 // serve static assets normally
+
+app.use((res, req, next) => {
+  console.log(req.req.originalUrl)
+  next();
+});
 app.use('/src', express.static('src'));
 
 // handle every other route with index.html, which will contain

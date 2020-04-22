@@ -1,4 +1,4 @@
-let bookJSON = JSON.parse(`
+let bookJSON = `
 [
     {
         "title" : "신화 콘서트",
@@ -39,7 +39,7 @@ let bookJSON = JSON.parse(`
         ]   
     }
 ]
-`);
+`;
 
 export function getBookList() {
     // get book info via fetch()
@@ -47,11 +47,12 @@ export function getBookList() {
     return books;
 }
 
-export function getBookInfo(bookName) {
+export function getBookInfo(bookname) {
     let books = JSON.parse(bookJSON);
     
-    books.forEach(book => {
-        if(book.title == bookName) return book;
-    });
-    return 404;
+    for(let book of books) {
+        if(book.title === bookname)
+            return book;
+    }
+    return null;
 }
