@@ -2,44 +2,64 @@ import Books from './components/books.js';
 import Book  from './components/book.js';
 import page404 from './components/404.js';
 
-const routeDict = [
-    {
-        url : "book",
-        function : Books,
-        children : [
-            {
-                url : ":bookname",
-                function : Book,
-                args : [
-                    "bookname"
-                ]
+class Router {
+    constructor() {
+        this.routes = [];
+    }
+
+    get(uri, callback) {
+        const route = {
+            uri,
+            callback
+        }
+        this.routes.push(route);
+    }
+
+    init() {
+        let path = decodeURI(window.location.pathname);
+        let pathParse = path.split('/')
+        for(let route of this.routes) {
+            let match = false;
+            let uriParse = route.uri.split('/');
+            let req = {
+                path,
+                attributes: {}
             }
-        ]
-    }, 
-];
 
-function getRoute(path, routeTree) {
-    if(!path || !routeTree) return null;
-    if(path.length === 0) return null;
+            if(uriParse.length == pathParse.length) 
+                for(let idx in pathParse) {
+                    if(uriParse[idx].startsWith(":")) {
+                        let attrName = uriParse[idx].substr(1);
+                        req.attributes[attrName] = pathParse[idx];
+                        match = true;
+                    } else if(pathParse[idx] !== uriParse[idx]) {
+                        match = false;
+                        break;
+                    } else if(pathParse[idx] === uriParse[idx]) {
+                        match = true;
+                    }   
+                }
 
-    for(let route of routeTree) {
-        if(route.url === path[0]) {
-            let childRoute = getRoute(path.shift(), route.children);
-            console.log(path, route);
-            if(!route.children || !childRoute) return route.function();
-            if(childRoute) return childRoute;
-            return null;
+            if(match) {
+                return route.callback.call(this, req);
+            }
         }
     }
 }
 
-export default function routes(path) {
-    console.log(path);
-    let parse_path = path.split("/");
+const router = new Router();
 
-    parse_path.shift();
-    let routeTree = routeDict;
-    let route = getRoute(parse_path, routeTree);
-    if(!route) return page404();
-    return route;
-}
+router.get('/book', req => {
+    return Books();
+});
+
+router.get('/book/:bookID', req => {
+    console.log(req);
+    return Book(req.attributes.bookID);
+});
+
+router.get('/:d', req => {
+    return page404();
+})
+
+export default router;

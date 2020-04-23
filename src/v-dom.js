@@ -5,8 +5,7 @@ const renderNode = vnode => {
   
     if (vnode.split) return document.createTextNode(vnode)
   
-    if (typeof nodeName === 'string') {
-        console.log(nodeName, attributes, children);
+    if (typeof nodeName === 'string') { 
         el = document.createElement(nodeName)
     
         for (let key in attributes) {
@@ -26,7 +25,6 @@ const renderNode = vnode => {
   
 export const renderComponent = (component, parent) => {
     const oldBase = component.base;
-    console.log(component, oldBase);
     component.base = renderNode(component.render(component.props, component.state));
     
     if(parent) {

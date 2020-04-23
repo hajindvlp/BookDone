@@ -8,6 +8,6 @@ import bookinfo from './bookinfo.js';
 export default (bookID) => {
     return e("div", {id : "book"},
         header(),
-        bookinfo(booID)
+        bookinfo(bookID)
     )
 };
