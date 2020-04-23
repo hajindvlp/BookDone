@@ -1,16 +1,10 @@
 import e from './element.js';
-import Component from './component.js';
-import {diff} from './v-dom.js';
-
-import Router from './router.js'
+import c from './component.js';
+import { renderComponent } from './v-dom.js';
 
 import Books from './components/books.js';
 
-// document.getElementById("root").appendChild(
-//     Router(decodeURI(window.location.pathname))
-// );
-
-class App extends Component {
+class App extends c {
     render() {
         return e('div', {id: "app"},
             Books()
@@ -18,8 +12,4 @@ class App extends Component {
     }
 }
 
-const render = (vnode, parent) => {
-    diff(undefined, vnode, parent);
-}
-
-render(e(App), document.querySelector("#root"));
+renderComponent(new App(), document.querySelector('#root'));

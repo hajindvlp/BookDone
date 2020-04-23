@@ -1,3 +1,3 @@
-export default function element(nodeName, attrs, ...children) {
-    return {nodeName, attrs, children};
+export default function element(nodeName, attributes, ...children) {
+    return {nodeName, attributes, children};
 }

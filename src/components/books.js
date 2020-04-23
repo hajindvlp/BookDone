@@ -7,8 +7,7 @@ import booklist from './booklist.js';
 
 export default () => {
     return h(
-        'div',
-        null,
+        'div', {id: "books"},
         header(),
         booklist()
     );
