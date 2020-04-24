@@ -3,11 +3,12 @@ import c from './component.js';
 import Router from './router.js'
 import { renderComponent } from './v-dom.js';
 
-import Books from './components/books.js';
+import Header from './components/header.js';
 
 class App extends c {
     render() {
         return e('div', {id: "app"},
+            Header(),
             Router.init()
         )
     }

@@ -1,5 +1,7 @@
-import Books from './components/books.js';
-import Book  from './components/book.js';
+import e from './element.js';
+import BookList from './components/booklist.js';
+import BookInfo  from './components/bookinfo.js';
+import EditBook from './components/editbook.js';
 import page404 from './components/404.js';
 
 class Router {
@@ -49,14 +51,21 @@ class Router {
 
 const router = new Router();
 
+router.get('/', req => {
+    return BookList();
+})
+
 router.get('/book', req => {
-    return Books();
+    return BookList();
 });
 
 router.get('/book/:bookID', req => {
-    console.log(req);
-    return Book(req.attributes.bookID);
+    return BookInfo(req.attributes.bookID);
 });
+
+router.get('/book/edit/:bookID', req => {
+    return e(EditBook);
+})
 
 router.get('/:d', req => {
     return page404();

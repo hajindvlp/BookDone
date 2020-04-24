@@ -1,10 +1,11 @@
+// url : /book/[book_name]
+
 import e from '../element.js';
 import page404 from './404.js';
 
 import { getBookInfo } from '../api/getbook.js';
 
 export default (bookID) => {
-    // console.log(bookname);
     let book = getBookInfo(bookID);
     
     if(book) {
@@ -35,4 +36,4 @@ export default (bookID) => {
     } else {
         return page404();
     }
-}
+};

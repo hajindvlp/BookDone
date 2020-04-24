@@ -2,6 +2,7 @@ const renderNode = vnode => {
     let el
   
     const { nodeName, attributes, children } = vnode
+    console.log("v", vnode);
   
     if (vnode.split) return document.createTextNode(vnode)
   
