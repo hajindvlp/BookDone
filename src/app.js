@@ -1,7 +1,7 @@
 import e from './element.js';
 import c from './component.js';
 import Router from './router.js'
-import { renderComponent } from './v-dom.js';
+import { renderComponent, diff } from './v-dom.js';
 
 import Header from './components/header.js';
 
@@ -15,4 +15,5 @@ class App extends c {
 }
 
 // console.log(Router);
-renderComponent(new App(), document.querySelector('#root'));
+
+diff(undefined, e(App), document.getElementById("root"));

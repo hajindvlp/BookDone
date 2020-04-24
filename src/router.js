@@ -64,7 +64,7 @@ router.get('/book/:bookID', req => {
 });
 
 router.get('/book/edit/:bookID', req => {
-    return e(EditBook);
+    return e(EditBook, req);
 })
 
 router.get('/:d', req => {
