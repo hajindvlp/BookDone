@@ -14,7 +14,6 @@ export default class EditBook extends c {
     }
 
     render() {
-        let book = this.state.book;
         return e("div", {"id" : "book_edit"},
             e("form", {id: "book_edit_form", action: `/book/edit/${this.state.book.id}`, method: "post"},
 
@@ -35,8 +34,8 @@ export default class EditBook extends c {
                 e("h2", {id: "book_edit_content_title"}, "차례"),
                 ...this.state.book.content.map(content => {
                     return e("li", {id: "book_edit_content"}, 
-                        e("p", {id: "book_edit_content_title"}, content.title),
-                        e("p", {id: "book_edit_content_pagenum"}, content.pagenum.toString())                    
+                        e("input", {type: "text", id: "book_edit_content_title", value: content.title}),
+                        e("input", {type: "text", id: "book_edit_content_pagenum", value: content.pagenum.toString()})
                     )
                 }),
                 e("button", {id: "book_edit_content_add", type: "button"}, "+"),
@@ -46,8 +45,8 @@ export default class EditBook extends c {
                 e("h2", {id: "book_edit_note_title"}, "노트"),
                 ...this.state.book.notes.map(note => {
                     return e("li", {id: "book_edit_note"},
-                        e("p", {id: "book_edit_note_date"}, note.date),
-                        e("p", {id: "book_edit_note_content"}, note.content)
+                        e("input", {type: "text", id: "book_edit_note_date", value: note.date}),
+                        e("input", {type: "text", id: "book_edit_note_content", value: note.content})
                     )
                 }),
                 e("button", {id: "book_edit_note_add", type: "button"}, "+"),
