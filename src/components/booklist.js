@@ -4,7 +4,7 @@ import { getBookList } from '../api/getbook.js';
 
 export default () => {
     let booklist = getBookList();
-    return e("div", {id: "book_list"}, 
+    return e("div", {id: "book-list"}, 
         ...booklist.map( book => {
             return e("div", {id : "book"}, 
                 e("img", {src: book.image, id : "image"}),

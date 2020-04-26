@@ -1,0 +1,15 @@
+#book-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#book-list #book {
+    width: 250px;
+    padding: 10px;
+    justify-items: center;
+}
+
+#book-list #book #image {
+    width: 200px;
+}
