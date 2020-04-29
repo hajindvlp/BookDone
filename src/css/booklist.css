@@ -13,6 +13,7 @@
 #book_list #book #image {
   width: 200px;
   border-radius: 1rem;
+  align-self: end;
   opacity: 0.7;
   box-shadow: none;
   transition: 300ms;
