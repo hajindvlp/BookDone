@@ -9,6 +9,7 @@ app.use((res, req, next) => {
   console.log(req.req.method, req.req.originalUrl)
   next();
 });
+
 app.use('/src', express.static('src'));
 
 // handle every other route with index.html, which will contain
