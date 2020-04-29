@@ -4,12 +4,14 @@ import { getBookList } from '../api/getbook.js';
 
 export default () => {
   let booklist = getBookList();
-  return e("div", {id: "book_list"}, 
+  return e("section", {id: "book_list"}, 
     ...booklist.map( book => {
       return e("div", {id : "book"}, 
-        e("img", {src: book.image, id : "book_list_image"}),
-        e("p", {id: "book_list_title"}, book.title)
+        e("img", {src: book.image, id : "image"})
       )
-  	})
+    }),
+    e("div", {id: "add"}, 
+      e("span" , {id: "text"}, "책 추가하기")
+    )
   );
 }

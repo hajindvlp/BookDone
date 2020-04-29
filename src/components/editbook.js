@@ -14,7 +14,7 @@ export default class EditBook extends c {
   }
 
   render() {
-    return e("div", {"id" : "book_edit"},
+    return e("section", {"id" : "book_edit"},
       e("form", {id: "book_edit_form", action: `/book/edit/${this.state.book.id}`, method: "post"},
 
       e("img", {id : "book_edit_image", src : this.state.book.image}),

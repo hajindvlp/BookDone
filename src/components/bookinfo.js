@@ -9,7 +9,7 @@ export default (bookID) => {
   let book = getBookInfo(bookID);
   
   if(book) {
-    return e("div", {"id" : "book_info"},
+    return e("section", {"id" : "book_info"},
       e("img", {id : "book_info_image", src : book.image}),
       e("p", {id: "book_info_title"}, book.title),
       e("p", {id: "book_info_writer"}, book.writer),
