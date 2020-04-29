@@ -1,0 +1,10 @@
+@import url("./normalize.css");
+@import url("./booklist.css");
+
+body {
+  background-color: #f4f3ee;
+}
+
+section {
+  margin: 2rem;
+}
