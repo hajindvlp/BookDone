@@ -1,0 +1,26 @@
+#nav {
+  padding-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#nav #icon {
+	display: block;
+	margin: auto;
+	width: 80%;
+}
+
+#nav #link {
+	display: block;
+	padding: 10px 0 10px 0;
+	text-decoration: none;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	color: black;
+	transition: 300ms;
+}
+
+#nav #link:hover {
+	color: white;
+	background: black;
+}

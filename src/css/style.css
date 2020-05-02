@@ -1,18 +1,32 @@
 @import url("./normalize.css");
 @import url("./booklist.css");
+@import url("./sidemenu.css");
+@import url("./bookshelf.css");
 
 body {
-  background-color: #f4f3ee;
+  height: 100%;
 }
 
 section {
   margin: 2rem;
+  margin-left: calc(15% + 2rem);
+}
+
+nav {
+  position: fixed;
+  height: 100%;
+  width: 15%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
 }
 
 footer {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 15px;
   left: 0;
   text-align: center;
+  color: #636363;
 }
