@@ -1,6 +1,5 @@
 import e from '../element.js';
 import Footer from './footer.js';
-import bookshelf from './bookshelf.js';
 
 const menu = [
 	{href: "/", name: "내 서제"},
