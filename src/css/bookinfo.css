@@ -1,0 +1,8 @@
+#book_info {
+  display: flex;
+
+}
+
+#book_info #image {
+  width: 400px;
+}
