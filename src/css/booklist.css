@@ -33,7 +33,7 @@
   cursor: pointer;
   text-align: center;
   line-height: 270px;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.02);
   box-shadow: none;
   transition: 500ms;
 }
