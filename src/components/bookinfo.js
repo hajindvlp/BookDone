@@ -10,10 +10,15 @@ export default (bookID) => {
   
   if(book) {
     return e("section", {"id" : "book_info"},
-      e("img", {id : "image", src : book.image}),
-      e("p", {id: "title"}, book.title),
-      e("p", {id: "writer"}, book.writer),
-      e("p", {id: "publisher"}, book.publisher),
+      e("div", {id: "main"},
+        e("img", {id : "image", src : book.image}),
+        e("div", {id: "details"},
+          e("p", {id: "title"}, book.title),
+          e("p", {id: "writer"}, book.writer),
+          e("p", {id: "seperator"}, "|"),
+          e("p", {id: "publisher"}, book.publisher),
+        ),
+      ),
       e("div", {id: "content_list"}, 
         e("h2", {id: "content_title"}, "차례"),
 	        ...book.content.map(content => {
