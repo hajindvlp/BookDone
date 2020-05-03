@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&display=swap');
 
 @import url("./normalize.css");
-@import url("./booklist.css");
 @import url("./sidemenu.css");
+@import url("./booklist.css");
+@import url("./bookinfo.css");
 
 body {
   font-family: 'Baloo Tamma 2', cursive;

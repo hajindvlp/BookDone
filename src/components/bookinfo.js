@@ -10,25 +10,25 @@ export default (bookID) => {
   
   if(book) {
     return e("section", {"id" : "book_info"},
-      e("img", {id : "book_info_image", src : book.image}),
-      e("p", {id: "book_info_title"}, book.title),
-      e("p", {id: "book_info_writer"}, book.writer),
-      e("p", {id: "book_info_publisher"}, book.publisher),
-      e("div", {id: "book_info_content_list"}, 
-        e("h2", {id: "book_info_content_title"}, "차례"),
+      e("img", {id : "image", src : book.image}),
+      e("p", {id: "title"}, book.title),
+      e("p", {id: "writer"}, book.writer),
+      e("p", {id: "publisher"}, book.publisher),
+      e("div", {id: "content_list"}, 
+        e("h2", {id: "content_title"}, "차례"),
 	        ...book.content.map(content => {
-	          return e("li", {id: "book_info_content"}, 
-	            e("p", {id: "book_info_content_title"}, content.title),
-	            e("p", {id: "book_info_content_pagenum"}, content.pagenum.toString())                    
+	          return e("li", {id: "content"}, 
+	            e("p", {id: "content_title"}, content.title),
+	            e("p", {id: "content_pagenum"}, content.pagenum.toString())                    
 	          )
 	        })
       ),
-      e("div", {id: "book_info_note_list"}, 
-        e("h2", {id: "book_info_note_title"}, "노트"),
+      e("div", {id: "note_list"}, 
+        e("h2", {id: "note_title"}, "노트"),
 	        ...book.notes.map(note => {
-	          return e("li", {id: "book_info_note"},
-	            e("p", {id: "book_info_note_date"}, note.date),
-	            e("p", {id: "book_info_note_content"}, note.content)
+	          return e("li", {id: "note"},
+	            e("p", {id: "note_date"}, note.date),
+	            e("p", {id: "note_content"}, note.content)
 	          )
 	        })
       )
