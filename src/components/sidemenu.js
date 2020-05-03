@@ -2,7 +2,8 @@ import e from '../element.js';
 import Footer from './footer.js';
 
 const menu = [
-	{href: "/", name: "내 서제"},
+	{href: "/library", name: "도서관"},
+	{href: "/book", name: "내 서재"},
 	{href: "/calender", name: "달력"},
 ]
 
