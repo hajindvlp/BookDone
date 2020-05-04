@@ -1,4 +1,5 @@
 import e from './element.js';
+import Library from './components/library.js';
 import BookList from './components/booklist.js';
 import BookInfo  from './components/bookinfo.js';
 import EditBook from './components/editbook.js';
@@ -54,6 +55,10 @@ const router = new Router();
 
 router.get('/', req => {
     return BookList();
+})
+
+router.get('/library', req => {
+    return e(Library);
 })
 
 router.get('/book', req => {

@@ -1,6 +1,6 @@
 import e from '../element.js';
 
-import { getBookList } from '../api/getbook.js';
+import { getBookList } from '../api/getUserBooks.js';
 
 export default () => {
   let booklist = getBookList();

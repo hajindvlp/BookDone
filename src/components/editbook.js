@@ -1,7 +1,7 @@
 import e from '../element.js'
 import c from '../component.js';
 
-import { getBookInfo } from '../api/getbook.js';
+import { getBookInfo } from '../api/getUserBooks.js';
 
 export default class EditBook extends c {
   constructor(props) {

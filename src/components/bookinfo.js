@@ -3,7 +3,7 @@
 import e from '../element.js';
 import page404 from './404.js';
 
-import { getBookInfo } from '../api/getbook.js';
+import { getBookInfo } from '../api/getUserBooks.js';
 
 export default (bookID) => {
   let book = getBookInfo(bookID);
