@@ -11,15 +11,27 @@ body {
   font-family: 'Baloo Tamma 2', 'Yeon Sung';
 }
 
+body::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
 section {
   margin: 2rem;
-  margin-left: calc(15% + 2rem);
+  margin-left: 20rem;
 }
 
 nav {
   position: fixed;
   height: 100%;
-  width: 15%;
+  width: 18rem;
   z-index: 1;
   top: 0;
   left: 0;
