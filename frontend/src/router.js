@@ -2,7 +2,6 @@ import e from './element.js';
 import Library from './components/library.js';
 import BookList from './components/booklist.js';
 import BookInfo  from './components/bookinfo.js';
-import EditBook from './components/editbook.js';
 import page404 from './components/404.js';
 import test from './components/test.js';
 
