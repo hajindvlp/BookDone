@@ -11,5 +11,5 @@ let userBooks = `[
 export function getBookList() {
     // api call to /user/book
     
-    return getBooks(userBooks);
+    return getBooks(...userBooks);
 }

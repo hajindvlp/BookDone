@@ -83,20 +83,8 @@ let bookJSON = `
 ]
 `;
 
-export function getBooks(bookIDs) {
+export function getBooks(...bookIDs) {
     //api call to /book
 
     return JSON.parse(bookJSON);
-}
-
-export function getBook(bookID) {
-    // api call to /book/:bookID
-
-    let books = JSON.parse(bookJSON);
-    
-    for(let book of books) {
-        if(book.id === bookID)
-            return book;
-    }
-    return null;
 }

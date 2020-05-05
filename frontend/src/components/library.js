@@ -8,7 +8,7 @@ export default () => {
 
   return e("section", {id: "library"},
     ...libraryBooks.map(lib => {
-      let books = getBooks(lib.books);
+      let books = getBooks(...lib.books);
 
       return e("div", {id: "tag"},
         e("p", {id: "title"}, lib.tag),

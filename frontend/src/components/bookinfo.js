@@ -3,10 +3,10 @@
 import e from '../element.js';
 import page404 from './404.js';
 
-import { getBook } from '../api/getBook.js';
+import { getBooks } from '../api/getBook.js';
 
 export default (bookID) => {
-  let book = getBook(bookID);
+  let book = getBooks(bookID);
   
   if(book) {
     return e("section", {"id" : "book_info"},

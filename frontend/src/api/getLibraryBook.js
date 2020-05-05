@@ -1,5 +1,3 @@
-import {getBook} from './getBook.js';
-
 let libraryBooks = `[
     {
         "tag": "베스트 셀러",
