@@ -57,7 +57,7 @@ router.get('/', req => {
 })
 
 router.get('/library', req => {
-    return e(Library);
+    return Library();
 })
 
 router.get('/book', req => {

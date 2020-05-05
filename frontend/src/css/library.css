@@ -1,0 +1,52 @@
+#library {
+  display: flex;
+  flex-direction: column;
+}
+
+#library #tag {
+  padding-bottom: 20px;
+}
+
+#library #tag #title {
+  display: inline;
+  font-size: 40px;
+}
+
+#library #tag #seperator {
+  display: inline;
+  font-size: 30px;
+  padding: 0 10px;
+}
+
+#library #tag #desc {
+  display: inline;
+  font-size: 20px;
+}
+
+#library #tag #books {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  white-space: nowrap;
+  align-items: flex-end;
+}
+
+#library #tag #books #book {
+  width: 200px;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+#library #tag #books #book #image {
+  width: 200px;
+  border-radius: 1rem;
+  align-self: end;
+  opacity: 0.7;
+  box-shadow: none;
+  transition: 300ms;
+}
+
+#library #tag #books #book #image:hover {
+  opacity: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
