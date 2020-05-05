@@ -4,6 +4,7 @@ import { getBookList } from '../api/getUserBooks.js';
 
 export default () => {
   let booklist = getBookList();
+  console.log(booklist);
   return e("section", {id: "book_list"}, 
     ...booklist.map( book => {
       return e("div", {id : "book"},

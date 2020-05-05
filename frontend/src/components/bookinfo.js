@@ -6,7 +6,7 @@ import page404 from './404.js';
 import { getBooks } from '../api/getBook.js';
 
 export default (bookID) => {
-  let book = getBooks(bookID);
+  let book = getBooks(bookID)[0];
   
   if(book) {
     return e("section", {"id" : "book_info"},
