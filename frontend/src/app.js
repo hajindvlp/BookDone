@@ -17,6 +17,6 @@ class App extends c {
 }
 
 console.log(document);
-if(typeof document !== "undefined" ) {
+if(document) {
     diff(undefined, e(App), document.getElementById("root"));    
 }
