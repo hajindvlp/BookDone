@@ -5,6 +5,8 @@ import { diff } from './v-dom.js';
 
 import Navbar from './components/sidemenu.js';
 
+import './css/style.css';
+
 class App extends c {
     render() {
         return e('div', {id: "app"},
@@ -14,4 +16,7 @@ class App extends c {
     }
 }
 
-diff(undefined, e(App), document.getElementById("root"));
+console.log(document);
+if(typeof document !== "undefined" ) {
+    diff(undefined, e(App), document.getElementById("root"));    
+}

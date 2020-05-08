@@ -12,11 +12,15 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 0.4rem;
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-button {
+  display: none;
 }
 
 body::-webkit-scrollbar-track {
-  background: #1e1e24;
+  background: #ffffff;
 }
 
 body::-webkit-scrollbar-thumb {

@@ -2,7 +2,12 @@
   "name": "bookdone",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --mode development",
+    "start": "webpack-dev-server --hot --inline --config build/base.config.js"
+  },
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hajindvlp/bookdone.git"
@@ -13,6 +18,15 @@
     "url": "https://github.com/hajindvlp/bookdone/issues"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {
+    "css-loader": "^3.5.3",
+    "file-loader": "^6.0.0",
+    "style-loader": "^1.2.1",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack-dev-server": "^3.10.3"
   }
 }

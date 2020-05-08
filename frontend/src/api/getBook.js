@@ -85,7 +85,6 @@ let bookJSON = `
 
 export function getBooks(...bookIDs) {
     //api call to /book
-    console.log(bookIDs);
     let books = JSON.parse(bookJSON);
 
     return bookIDs.map(bookID => {

@@ -29,7 +29,7 @@ export const renderComponent = (component, parent) => {
 }
 
 export const diff = (dom, vnode, parent) => {
-    if(dom) {
+    if(dom !== undefined) {
         if(typeof vnode === "string") {
             dom.nodeValue = vnode;
             return dom;
@@ -48,7 +48,7 @@ export const diff = (dom, vnode, parent) => {
         }      
         dom.childNodes.forEach((child, i) => diff(child, vnode.children[i]))
         return dom;
-    } else {
+    } else if(parent) {
         const newDom = renderNode(vnode);
         parent.appendChild(newDom);
         return newDom;
