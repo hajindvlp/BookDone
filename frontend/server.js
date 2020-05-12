@@ -3,21 +3,19 @@ const path = require('path');
 const port = 80;
 const app = express();
 
-// serve static assets normally
-
 app.use((res, req, next) => {
   console.log(req.req.method, req.req.originalUrl)
   next();
 });
 
-app.use('/dist', express.static('dist'));
+// serve static assets normally
+app.use('/src', express.static('src'));
 
 // handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).
-
 app.get('*', function (request, response) {
   console.log(__dirname)
-  response.sendFile(path.resolve(__dirname, 'dist/index.html'));
+  response.sendFile(path.resolve(__dirname, 'src/index.html'));
 });
 
 app.listen(port);

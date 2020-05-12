@@ -1,16 +1,19 @@
-import e from '../element.js';
+import e from '../modules/element.js';
 import Footer from './footer.js';
 
 const menu = [
-	{href: "/library", name: "📚 도서관"},
-	{href: "/book", name: "📘 내 서재"},
-	{href: "/calendar", name: "📅 달력"},
+	{href: "/library", name: "도서관", icon: "far fa-compass"},
+	{href: "/book", name: "내 서재", icon: "fas fa-book"},
+	{href: "/calendar", name: "달력", icon: "far fa-calendar-alt"},
 ]
 
 export default () => {
 	return e("nav", {id: "nav"}, 
-		e("a", {href: "/"}, e("img", {id: "icon", src: "/src/img/bookshelf.svg"})),
-		...menu.map(m => e("a", {href: m.href, id: "link"}, m.name)),
+		e("a", {href: "/"}, e("img", {id: "title_icon", src: "/src/img/bookshelf.svg"})),
+		...menu.map(m => e("a", {href: m.href, id: "link"}, 
+			e("i", {id: "icon", class: m.icon}), 
+			m.name
+		)),
 		Footer()
   )
 }

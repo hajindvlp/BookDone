@@ -1,9 +1,8 @@
-import e from './element.js';
+import e from './modules/element.js';
 import Library from './components/library.js';
 import BookList from './components/booklist.js';
 import BookInfo  from './components/bookinfo.js';
 import page404 from './components/404.js';
-import test from './components/test.js';
 
 class Router {
     constructor() {
@@ -70,10 +69,6 @@ router.get('/book/:bookID', req => {
 
 router.get('/book/edit/:bookID', req => {
     return e(EditBook, req);
-})
-
-router.get('/test', _ => {
-    return e(test);
 })
 
 router.get('/:d', req => {

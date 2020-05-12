@@ -5,7 +5,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#nav #icon {
+#nav #title_icon {
 	display: block;
 	margin: auto;
 	width: 80%;
@@ -26,4 +26,8 @@
 #nav #link:hover {
 	color: white;
 	background: black;
+}
+
+#nav #icon {
+	padding-right: 10px;
 }

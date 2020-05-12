@@ -1,4 +1,4 @@
-import e from '../element.js';
+import e from '../modules/element.js';
 
 import {getLibraryBook} from '../api/getLibraryBook.js';
 import {getBooks} from '../api/getBook.js';

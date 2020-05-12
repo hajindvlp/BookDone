@@ -1,11 +1,9 @@
-import e from './element.js';
-import c from './component.js';
+import e from './modules/element.js';
+import c from './modules/component.js';
+import { diff } from './modules/v-dom.js';
 import Router from './router.js'
-import { diff } from './v-dom.js';
 
 import Navbar from './components/sidemenu.js';
-
-import './css/style.css';
 
 class App extends c {
     render() {
@@ -16,7 +14,6 @@ class App extends c {
     }
 }
 
-console.log(document);
 if(document) {
     diff(undefined, e(App), document.getElementById("root"));    
 }

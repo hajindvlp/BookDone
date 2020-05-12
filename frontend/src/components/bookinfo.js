@@ -1,6 +1,6 @@
 // url : /book/[book_name]
 
-import e from '../element.js';
+import e from '../modules/element.js';
 import page404 from './404.js';
 
 import { getBooks } from '../api/getBook.js';

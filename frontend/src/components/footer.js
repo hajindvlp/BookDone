@@ -1,4 +1,4 @@
-import e from '../element.js';
+import e from '../modules/element.js';
 
 export default () => {
   return e("footer", {id: "footer"},
