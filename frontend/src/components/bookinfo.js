@@ -1,9 +1,9 @@
 // url : /book/[book_name]
 
-import e from '../modules/element.js';
-import page404 from './404.js';
+import e from '../modules/element';
+import page404 from './404';
 
-import { getBooks } from '../api/getBook.js';
+import { getBooks } from '../api/getBook';
 
 export default (bookID) => {
   let book = getBooks(bookID)[0];

@@ -1,9 +1,3 @@
-import e from './modules/element.js';
-import Library from './components/library.js';
-import BookList from './components/booklist.js';
-import BookInfo  from './components/bookinfo.js';
-import page404 from './components/404.js';
-
 class Router {
     constructor() {
         this.routes = [];
@@ -17,7 +11,7 @@ class Router {
         this.routes.push(route);
     }
 
-    init() {
+    route() {
         let path = decodeURI(window.location.pathname);
         let pathParse = path.split('/')
         for(let route of this.routes) {
@@ -49,30 +43,4 @@ class Router {
     }
 }
 
-const router = new Router();
-
-router.get('/', req => {
-    return BookList();
-})
-
-router.get('/library', req => {
-    return Library();
-})
-
-router.get('/book', req => {
-    return BookList();
-});
-
-router.get('/book/:bookID', req => {
-    return BookInfo(req.attributes.bookID);
-});
-
-router.get('/book/edit/:bookID', req => {
-    return e(EditBook, req);
-})
-
-router.get('/:d', req => {
-    return page404();
-})
-
-export default router;
+export default Router;

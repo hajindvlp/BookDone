@@ -1,4 +1,4 @@
-import {getBooks} from './getBook.js'
+import {getBooks} from './getBook'
 
 let userBookJSON = `[
     "wjdgkwls",

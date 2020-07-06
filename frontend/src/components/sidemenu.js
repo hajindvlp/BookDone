@@ -1,5 +1,5 @@
-import e from '../modules/element.js';
-import Footer from './footer.js';
+import e from '../modules/element';
+import Footer from './footer';
 
 const menu = [
 	{href: "/library", name: "도서관", icon: "far fa-compass"},
