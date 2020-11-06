@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: './src/app.js',
@@ -18,23 +17,22 @@ module.exports = {
           'style-loader',
           'css-loader'
         ]
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader'
-        ]
+      }, {
+        test: /\.js/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader'
+      }, {
+        test: /\.svg$/,
+        loader: 'svg-url-loader'
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src', 'index.html')
-    })
-  ],
   devServer: {
     contentBase: path.resolve(__dirname, 'build'),
-    compress: false,
-    port: 4000
+    compress: true,
+    port: 4000,
+    historyApiFallback: {
+      index: 'index.html'
+    }
   }
 } 
